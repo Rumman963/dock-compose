@@ -8,10 +8,10 @@ RUN npm install
 
 COPY  . .
 
-ENV DATABASE_URL= postgresql://neondb_owner:npg_U5XvxhRnef6D@ep-muddy-glitter-b49h6psy-pooler.c-6.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+ENV DATABASE_URL=postgresql://postgres:mysecretpassword@localhost:5432/postgres
 
 RUN npx prisma migrate dev
 RUN npx prisma generate
 RUN npm run build
 
-CMD ["npm" , "start"]
+CMD ["npm" , "start"] 
